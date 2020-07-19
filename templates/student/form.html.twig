@@ -1,12 +1,33 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-    <h1>{{ form_title }}</h1>
+
+
+
+  
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <p class="form-controle">{{ form(form_student) }}</p>
-                    </div>    
+                        {{ form_start(form_student) }}
+                          <h1 class="text-center">{{ form_title }}</h1>
+                            <div class="my-custom-class-for-errors">
+                                {{ form_errors(form_student) }}
+                            </div>
+                             <div class="form-group">
+                                {# {{ form_label(form_student.firstname, 'Votre Prénom', {'label_attr': {'class': 'foo'}}) }} #}
+                                {{ form(form_student,{'class': 'form-control'}) }}
+                            </div>
+                            {# <div class="form-group">
+                                {{ form_label(form_student.lastname, 'Votre Nom', {'label_attr': {'class': 'foo'}}) }}
+                                {{ form(form_student.lastname,{'class': 'form-control'}) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form_student.numetud, 'votre numéro étudiant', {'label_attr': {'class': 'foo'}}) }}
+                                {{ form(form_student.numetud,{'class': 'form-control'}) }}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer</button> #}
+                        {{ form_end(form_student) }}  
+                  
                 </div> 
             </div>  
         </div>         

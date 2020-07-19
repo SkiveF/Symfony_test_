@@ -18,7 +18,7 @@ class StudentFormType extends AbstractType
         $builder
             ->add('firstname',TextType::class)
             ->add('lastname',TextType::class)
-            ->add('Numetud',NumberType::class)
+            ->add('numetud',NumberType::class)
             ->add('submit', SubmitType::class)
         ;
     }
